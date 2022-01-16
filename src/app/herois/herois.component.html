@@ -1,0 +1,11 @@
+<div>
+  <h2> {{ heroi.nome | uppercase }} Detalhes </h2>
+  <p> id: {{ heroi.id }} </p>
+  <p> nome: {{ heroi.nome }} </p>
+</div>
+
+<div>
+  <label for="nome">Nome do heroi:</label>
+  <!-- two way datta binding -->
+  <input [(ngModel)]="heroi.nome" id="nome" type="text" placeholder="Nome do Heroi">
+</div>
