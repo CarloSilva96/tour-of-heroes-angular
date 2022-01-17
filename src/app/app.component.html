@@ -1,13 +1,28 @@
 <mat-toolbar color="primary">
   <span> {{ title }} </span>
   <span fxFlex></span>
-  <button mat-icon-button class="example-icon favorite-icon">
+  <button
+  mat-icon-button
+  arial-label="Dashboard"
+  routerLink="/dashboard"
+  matTooltip="Dashboard"
+  >
     <mat-icon>
-      favorite
+      dashboard
+    </mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    aria-label="Lista de Herois"
+    routerLink="/herois"
+    matTooltip="Lista de Herois"
+  >
+    <mat-icon>
+      sports_martial_arts
     </mat-icon>
   </button>
 </mat-toolbar>
-<div class="content">
+<div class="content" fxLayoutGap="12px">
   <router-outlet></router-outlet>
   <app-mensagens></app-mensagens>
 </div>
