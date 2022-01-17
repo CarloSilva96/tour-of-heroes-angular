@@ -1,0 +1,11 @@
+.herois {
+  cursor: pointer;
+}
+
+.herois li.selected {
+  background-color: rgb(45, 94, 60);
+  color: white;
+  width: 200px;
+  border-radius: 10px;
+  padding: 5px;
+}

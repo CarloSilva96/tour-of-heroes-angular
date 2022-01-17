@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeroisComponent } from './herois/herois.component';
+import { DetalhesHeroisComponent } from './detalhes-herois/detalhes-herois.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroisComponent
+    HeroisComponent,
+    DetalhesHeroisComponent
   ],
   imports: [
     BrowserModule,

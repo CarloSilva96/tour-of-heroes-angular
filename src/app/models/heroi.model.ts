@@ -1,4 +1,5 @@
 export interface Heroi {
   id: number,
-  nome: string
+  nome: string,
+  forcaFisica: string
 }

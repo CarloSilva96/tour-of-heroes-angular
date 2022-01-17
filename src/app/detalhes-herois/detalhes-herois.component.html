@@ -1,0 +1,9 @@
+<div *ngIf="heroi">
+  <p>ID: {{ heroi.id }} </p>
+  <p>Nome: {{ heroi.nome }}</p>
+  <p>Força Física: {{ heroi.forcaFisica }}</p>
+
+  <label for="nome">Nome do heroi:</label>
+  <!-- two way datta binding -->
+  <input [(ngModel)]="heroi.nome" id="nome" type="text" placeholder="Nome do Heroi">
+</div>

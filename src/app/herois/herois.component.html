@@ -1,11 +1,21 @@
 <div>
-  <h2> {{ heroi.nome | uppercase }} Detalhes </h2>
-  <p> id: {{ heroi.id }} </p>
-  <p> nome: {{ heroi.nome }} </p>
+  <h2>Herois Marvel</h2>
+  <div>
+    <ul class="herois">
+      <li
+        *ngFor="let heroi of herois"
+        (click)="selecionarHeroi(heroi)"
+        [class.selected] = "heroi === heroiSelecionado"      >
+        <span>{{ heroi.nome }}</span>
+      </li>
+    </ul>
+  </div>
+  <!-- fazendo binding para outro componente -->
+  <app-detalhes-herois [heroi]="heroiSelecionado"></app-detalhes-herois>
+
 </div>
 
-<div>
-  <label for="nome">Nome do heroi:</label>
-  <!-- two way datta binding -->
-  <input [(ngModel)]="heroi.nome" id="nome" type="text" placeholder="Nome do Heroi">
-</div>
+
+
+
+
