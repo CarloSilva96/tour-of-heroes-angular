@@ -1,8 +1,14 @@
 <mat-toolbar color="primary">
   <span> {{ title }} </span>
+  <span fxFlex></span>
+  <button mat-icon-button class="example-icon favorite-icon">
+    <mat-icon>
+      favorite
+    </mat-icon>
+  </button>
 </mat-toolbar>
 <div class="content">
-  <app-herois></app-herois>
+  <router-outlet></router-outlet>
   <app-mensagens></app-mensagens>
 </div>
 
