@@ -1,0 +1,27 @@
+<div *ngIf="mensagemService.getMensagens().length">
+  <mat-accordion>
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+
+        <mat-panel-title>
+          Mensagens
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ mensagemService.getMensagens().length }} mensagens
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>
+        <button
+          color="warn"
+          mat-raised-button
+          (click)="mensagemService.limparMensagens()"
+        >
+          Limpar Mensagens
+        </button>
+      </p>
+      <div *ngFor="let mensagem of mensagemService.getMensagens()">
+        {{ mensagem }}
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
