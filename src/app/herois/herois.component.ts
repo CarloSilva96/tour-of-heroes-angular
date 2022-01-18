@@ -9,21 +9,14 @@ import { MensagemService } from '../services/mensagem.service';
 })
 export class HeroisComponent implements OnInit {
   herois: Heroi[] = [];
+  atributosHerois: string[] = ['id', 'nome'];
 
   constructor(
-    private heroiService: HeroiService,
-    private mensagemService: MensagemService
+    private heroiService: HeroiService
   ) { }
 
   ngOnInit(): void {
     this.setHerois();
-  }
-
-  heroiSelecionado?: Heroi;
-
-  selecionarHeroi(heroi: Heroi): void{
-    this.mensagemService.addMensagem(`HeroisComponent: Selecionado heroi com id = ${heroi.id}`)
-    this.heroiSelecionado = heroi;
   }
 
   setHerois(): void {

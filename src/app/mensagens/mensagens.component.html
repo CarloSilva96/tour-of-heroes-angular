@@ -19,9 +19,9 @@
           Limpar Mensagens
         </button>
       </p>
-      <div *ngFor="let mensagem of mensagemService.getMensagens()">
-        {{ mensagem }}
-      </div>
+      <mat-list role="list" *ngFor="let mensagem of mensagemService.getMensagens()">
+        <mat-list-item role="listitem">{{ mensagem }}</mat-list-item>
+      </mat-list>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

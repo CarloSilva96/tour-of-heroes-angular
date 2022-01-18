@@ -1,9 +1,26 @@
 <div *ngIf="heroi">
-  <p>ID: {{ heroi.id }} </p>
-  <p>Nome: {{ heroi.nome }}</p>
-  <p>Força Física: {{ heroi.forcaFisica }}</p>
+  <h1> {{ heroi.nome | uppercase }} </h1>
+  <mat-card>
+    <mat-card-content fxLayout="column">
+      <mat-form-field appearance="fill">
+        <mat-label>ID</mat-label>
+        <input matInput disabled [value]="heroi.id">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Força Física</mat-label>
+        <textarea matInput
+          readonly="true"
+          [value]="heroi.forcaFisica"
+          class="resize-none"
+        >
+        </textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Nome do Heroi</mat-label>
+        <input matInput [(ngModel)]="heroi.nome" id="nome" type="text" placeholder="Nome">
+      </mat-form-field>
+      <button mat-raised-button (click)="voltar()">Voltar</button>
+    </mat-card-content>
+  </mat-card>
 
-  <label for="nome">Nome do heroi:</label>
-  <!-- two way datta binding -->
-  <input [(ngModel)]="heroi.nome" id="nome" type="text" placeholder="Nome do Heroi">
 </div>

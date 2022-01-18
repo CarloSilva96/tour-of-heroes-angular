@@ -1,17 +1,23 @@
 <div>
-  <h2>Herois Marvel</h2>
-  <div>
-    <ul class="herois">
-      <li
-        *ngFor="let heroi of herois"
-        (click)="selecionarHeroi(heroi)"
-        [class.selected] = "heroi === heroiSelecionado"      >
-        <span>{{ heroi.nome }}</span>
-      </li>
-    </ul>
-  </div>
-  <!-- fazendo binding para outro componente -->
-  <app-detalhes-herois [heroi]="heroiSelecionado"></app-detalhes-herois>
+  <h1>Herois Marvel</h1>
+
+  <mat-table [dataSource]="herois" class="mat-elevation-z8">
+    <!-- ID -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let heroi"> {{ heroi.id }} </mat-cell>
+    </ng-container>
+
+    <!-- NOME -->
+    <ng-container matColumnDef="nome">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let heroi"> {{ heroi.nome }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="atributosHerois"></mat-header-row>
+    <mat-row *matRowDef="let heroi; columns: atributosHerois" [routerLink]="['/herois', heroi.id]"></mat-row>
+  </mat-table>
+
 </div>
 
 

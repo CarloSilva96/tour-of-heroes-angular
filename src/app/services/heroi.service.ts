@@ -20,4 +20,11 @@ export class HeroiService {
     this.mensagemService.addMensagem("HeroiService: Heróis recebido!")
     return herois;
   }
+
+  getHeroi(id: number): Observable<Heroi> {
+    /* ! NO FINAL INDICA PARA CASO NAO EXISTA ALGUM ID INFORMADO */
+    const HEROI = this.herois.find(heroi => heroi.id === id)!;
+    this.mensagemService.addMensagem(`HeroService: Encontrado heroi com id = ${id}`)
+    return of(HEROI);
+  }
 }
