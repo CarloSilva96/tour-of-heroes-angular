@@ -6,8 +6,8 @@ import { HeroisComponent } from './herois/herois.component';
 
 const ROTAS: Routes = [
 
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-  { path: 'herois/:id', component: DetalhesHeroisComponent},
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'herois/:id', component: DetalhesHeroisComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'herois', component: HeroisComponent }
 ];

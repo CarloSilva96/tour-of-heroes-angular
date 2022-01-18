@@ -1,24 +1,17 @@
 <mat-toolbar color="primary">
   <span> {{ title }} </span>
   <span fxFlex></span>
+
   <button
-  mat-icon-button
-  arial-label="Dashboard"
-  routerLink="/dashboard"
-  matTooltip="Dashboard"
-  >
-    <mat-icon>
-      dashboard
-    </mat-icon>
-  </button>
-  <button
+    *ngFor="let menuItem of menuItens"
     mat-icon-button
-    aria-label="Lista de Herois"
-    routerLink="/herois"
-    matTooltip="Lista de Herois"
+    arial-label="menuItem.toolTipText"
+    [matTooltip]="menuItem.toolTipText"
+    [routerLink]="[menuItem.routerLink]"
   >
     <mat-icon>
-      sports_martial_arts
+      {{ menuItem.icone }}
     </mat-icon>
   </button>
+
 </mat-toolbar>

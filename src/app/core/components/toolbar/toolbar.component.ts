@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MenuItem } from '../../models/menu-item.model';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ToolbarComponent {
   @Input() title = '';
-  constructor() { }
+  @Input() menuItens: MenuItem[] = [];
 
+  constructor() { }
 }

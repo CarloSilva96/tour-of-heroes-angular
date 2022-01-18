@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { HeroisComponent } from './herois/herois.component';
 import { DetalhesHeroisComponent } from './detalhes-herois/detalhes-herois.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
