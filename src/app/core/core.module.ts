@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { MaterialModule } from './material/material.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MensagensComponent } from './components/mensagens/mensagens.component';
@@ -27,4 +27,11 @@ const MODULES = [
   componentes */
   exports: [MODULES, COMPONENTS]
 })
-export class CoreModule { }
+export class CoreModule {
+  /** Bloqueando para que o CoreModule não seja importando em outros módulos **/
+  constructor(@Optional() @SkipSelf() parentModule?: CoreModule) {
+    if (parentModule) {
+      throw new Error('CoreModule já foi carregado. Já foi importado em AppModule');
+    }
+  }
+}
