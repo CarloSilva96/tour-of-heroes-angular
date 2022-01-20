@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Heroi } from "../core/models/heroi.model";
-import { HeroiService } from "../core/services/heroi.service";
+import { Heroi } from "../../../core/models/heroi.model";
+import { HeroiService } from "../../../core/services/heroi.service";
 import { Location } from '@angular/common';
 
 @Component({
@@ -15,8 +15,10 @@ export class DetalhesHeroisComponent implements OnInit{
 
   constructor(
     private heroiService: HeroiService,
+
     /* permite interagir com histórico do navegador */
     private location: Location,
+
     /* segura as informacoes sobre o momento onde a rota estiver */
     private route: ActivatedRoute
   ) { }

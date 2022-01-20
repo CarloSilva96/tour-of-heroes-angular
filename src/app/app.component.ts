@@ -8,6 +8,7 @@ import { MenuItem } from './core/models/menu-item.model';
 })
 export class AppComponent {
   title = 'Tour of Heroes';
+
   menuItens: MenuItem[] = [
     {
       icone: 'dashboard',

@@ -1,5 +1,5 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { MaterialModule } from './material/material.module';
+import { MaterialModule } from '../material/material.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MensagensComponent } from './components/mensagens/mensagens.component';
 

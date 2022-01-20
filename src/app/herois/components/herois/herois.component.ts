@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Heroi } from '../core/models/heroi.model';
-import { HeroiService } from '../core/services/heroi.service';
-import { MensagemService } from '../core/services/mensagem.service';
+import { Heroi } from '../../../core/models/heroi.model';
+import { HeroiService } from '../../../core/services/heroi.service';
+
 @Component({
   selector: 'app-herois',
   templateUrl: './herois.component.html',
