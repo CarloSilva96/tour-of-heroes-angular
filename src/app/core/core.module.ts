@@ -6,9 +6,11 @@ import { MensagensComponent } from './components/mensagens/mensagens.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { PaginaNaoEncontradaComponent } from './components/pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 const COMPONENTS = [
   MensagensComponent,
+  PaginaNaoEncontradaComponent,
   ToolbarComponent
 ];
 

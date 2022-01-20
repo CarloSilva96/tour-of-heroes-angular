@@ -4,7 +4,6 @@ import { DetalhesHeroisComponent } from './components/detalhes-herois/detalhes-h
 import { HeroisComponent } from './components/herois/herois.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeroisRoutingModule } from './herois-routing.module';
 
@@ -19,7 +18,7 @@ import { HeroisRoutingModule } from './herois-routing.module';
     MaterialModule,
     FormsModule,
     FlexLayoutModule,
-    HeroisRoutingModule
+    HeroisRoutingModule,
   ]
 })
 export class HeroisModule { }

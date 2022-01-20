@@ -4,7 +4,8 @@ import { DashboardComponent } from './dashboard.component';
 
 // CONFIGURACAO DE ROTAS
 const ROTAS: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
+  /** ROTA INICIAL AO ENTRAR NE COMPONENTE /dashboard **/
+  { path: '', component: DashboardComponent },
 ];
 
 // ADICIONADO AS ROTAS DESSE MODULO COMO ROTAS FILHAS A ROTA ROOT

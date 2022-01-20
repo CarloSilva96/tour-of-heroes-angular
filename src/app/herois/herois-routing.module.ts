@@ -4,8 +4,9 @@ import { DetalhesHeroisComponent } from './components/detalhes-herois/detalhes-h
 import { HeroisComponent } from './components/herois/herois.component';
 
 const ROTAS: Routes = [
-  { path: 'herois', component: HeroisComponent },
-  { path: 'herois/:id', component: DetalhesHeroisComponent }
+  /** ROTA INICIAL AO ENTRAR NE COMPONENTE /herois**/
+  { path: '', component: HeroisComponent },
+  { path: ':id', component: DetalhesHeroisComponent }
 ];
 
 @NgModule({

@@ -3,10 +3,9 @@ import { MensagemService } from '../../services/mensagem.service';
 
 @Component({
   selector: 'app-mensagens',
-  templateUrl: './mensagens.component.html',
-  styleUrls: ['./mensagens.component.scss']
+  templateUrl: './mensagens.component.html'
 })
-export class MensagensComponent implements OnInit {
+export class MensagensComponent {
 
   constructor(
     public mensagemService: MensagemService

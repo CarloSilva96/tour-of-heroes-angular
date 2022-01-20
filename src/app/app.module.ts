@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { HeroisModule } from './herois/herois.module';
 
 @NgModule({
   declarations: [
@@ -18,10 +16,6 @@ import { HeroisModule } from './herois/herois.module';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-
-    // FEATURES DOS MODULOS
-    DashboardModule,
-    HeroisModule,
 
     // IMPORTACAO PARA TODA APLICACAO
     AppRoutingModule,
