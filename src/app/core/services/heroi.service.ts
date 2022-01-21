@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Heroi } from '../models/heroi.model';
 import { MensagemService } from './mensagem.service';
 
@@ -15,7 +16,7 @@ export class HeroiService {
     forcaFisica: ''
   };
 
-  private apiHeroisUrl = 'api/herois'
+  private apiHeroisUrl = `${environment.baseUrl}/herois`;
 
   constructor(
     private httpCliente: HttpClient,
@@ -23,15 +24,20 @@ export class HeroiService {
   ) { }
 
   getHerois(): Observable<Heroi[]> {
-    return this.httpCliente.get<Heroi[]>(this.apiHeroisUrl);
     // this.mensagemService.addMensagem("Heróis recebido!")
+    return this.httpCliente.get<Heroi[]>(this.apiHeroisUrl)
+                            .pipe(
+                              tap((herois) => this.logMsg(`Foram recebidos ${herois.length} heroi(s).`))
+                            );
   }
 
   getHeroi(id: number): Observable<Heroi> {
-    /* ! NO FINAL INDICA PARA CASO NAO EXISTA ALGUM ID INFORMADO */
-    const HEROI = this.herois //.find(heroi => heroi.id === id)!;
-    this.mensagemService.addMensagem(`Retornado heroi com id = ${id}`)
-    return of(HEROI);
+    //this.mensagemService.addMensagem(`Retornado heroi com id = ${id}`)
+    //const HEROI = this.herois //.find(heroi => heroi.id === id)!;
+    return this.httpCliente.get<Heroi>(`${this.apiHeroisUrl}/${id}`)
+                            .pipe(
+                              tap((heroi) => this.logMsg(`Selecionado ${heroi.nome} #ID: ${heroi.id}`))
+                            );
   }
 
   private logMsg(mensagem: string): void {

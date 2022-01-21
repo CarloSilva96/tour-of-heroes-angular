@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'https://mock-tour-of-herois-cj.herokuapp.com/api',
 };
