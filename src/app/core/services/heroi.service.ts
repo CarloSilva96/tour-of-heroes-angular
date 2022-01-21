@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, tap } from 'rxjs';
+import { finalize, Observable, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Heroi } from '../models/heroi.model';
 import { MensagemService } from './mensagem.service';
@@ -10,11 +10,7 @@ import { MensagemService } from './mensagem.service';
 })
 export class HeroiService {
 
-  herois: Heroi = {
-    id: 0,
-    nome: '',
-    forcaFisica: ''
-  };
+  herois: Heroi[] = [];
 
   private apiHeroisUrl = `${environment.baseUrl}/herois`;
 

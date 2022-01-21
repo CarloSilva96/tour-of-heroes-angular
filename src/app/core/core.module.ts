@@ -7,11 +7,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './components/pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { LoadingPaginaComponent } from './components/loading-pagina/loading-pagina.component';
 
 const COMPONENTS = [
   MensagensComponent,
   PaginaNaoEncontradaComponent,
-  ToolbarComponent
+  ToolbarComponent,
+  LoadingPaginaComponent
 ];
 
 const MODULES = [
