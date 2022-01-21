@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
-import { HEROIS } from '../mocks/mock-herois'
+import { Observable, of } from 'rxjs';
 import { Heroi } from '../models/heroi.model';
 import { MensagemService } from './mensagem.service';
 
@@ -9,22 +9,32 @@ import { MensagemService } from './mensagem.service';
 })
 export class HeroiService {
 
-  herois = HEROIS;
+  herois: Heroi = {
+    id: 0,
+    nome: '',
+    forcaFisica: ''
+  };
+
+  private apiHeroisUrl = 'api/herois'
 
   constructor(
+    private httpCliente: HttpClient,
     private mensagemService: MensagemService
   ) { }
 
   getHerois(): Observable<Heroi[]> {
-    const herois = of(HEROIS)
-    this.mensagemService.addMensagem("HeroiService: Heróis recebido!")
-    return herois;
+    return this.httpCliente.get<Heroi[]>(this.apiHeroisUrl);
+    // this.mensagemService.addMensagem("Heróis recebido!")
   }
 
   getHeroi(id: number): Observable<Heroi> {
     /* ! NO FINAL INDICA PARA CASO NAO EXISTA ALGUM ID INFORMADO */
-    const HEROI = this.herois.find(heroi => heroi.id === id)!;
-    this.mensagemService.addMensagem(`HeroService: Encontrado heroi com id = ${id}`)
+    const HEROI = this.herois //.find(heroi => heroi.id === id)!;
+    this.mensagemService.addMensagem(`Retornado heroi com id = ${id}`)
     return of(HEROI);
+  }
+
+  private logMsg(mensagem: string): void {
+    this.mensagemService.addMensagem(`HeroiService: ${mensagem}`);
   }
 }

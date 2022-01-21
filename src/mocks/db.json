@@ -1,0 +1,49 @@
+{
+  "herois": [
+    {
+      "id": 1,
+      "nome": "Wolverine",
+      "forcaFisica": "Embora o limite exato não seja conhecido, a força de Wolverine é suficiente para levantar cerca de 362.87 Quilos."
+    },
+    {
+      "id": 2,
+      "nome": "Homem Aranha",
+      "forcaFisica": "Peter pode facilmente levantar 10 toneladas."
+    },
+    {
+      "id": 3,
+      "nome": "Batman",
+      "forcaFisica": "Batman pode levantar de 400 a 725 Quilos."
+    },
+    {
+      "id": 4,
+      "nome": "Mulher Maravilha",
+      "forcaFisica": "Pode levantar de 12.800 a 51.200 toneladas."
+    },
+    {
+      "id": 5,
+      "nome": "Pantera Negra",
+      "forcaFisica": "Sua força física está entre levantar até 8 toneladas embora os limites não sejam realmente conhecidos."
+    },
+    {
+      "id": 6,
+      "nome": "Homem de Ferro",
+      "forcaFisica": "Quando totalmente carregada, Tony Stark pode levantar até 100 toneladas em sua armadura do Homem de Ferro."
+    },
+    {
+      "id": 7,
+      "nome": "Capitã Marvel",
+      "forcaFisica": "Extremamente forte. Pode absover energia para aumentar mais ainda a sua força."
+    },
+    {
+      "id": 8,
+      "nome": "Hulk",
+      "forcaFisica": "Pode levantar também é 100 toneladas."
+    },
+    {
+      "id": 11,
+      "nome": "Carlos Silva",
+      "forcaFisica": "Normal"
+    }
+  ]
+}
