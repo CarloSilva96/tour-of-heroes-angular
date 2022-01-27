@@ -32,16 +32,29 @@ export class HeroiService {
     //const HEROI = this.herois //.find(heroi => heroi.id === id)!;
     return this.httpCliente.get<Heroi>(`${this.apiHeroisUrl}/${id}`)
                             .pipe(
-                              tap((heroi) => this.logMsg(`Selecionado ${heroi.nome} #ID: ${heroi.id}`))
-                            );
+                              tap((heroi) => this.logMsg(`Selecionado: ${this.descricaoAtributos(heroi)}`)
+                            ));
   }
 
   atualizarHeroi(heroi: Heroi): Observable<Heroi> {
     return this.httpCliente.put<Heroi>(`${this.apiHeroisUrl}/${heroi.id}`, heroi)
                 .pipe(
                   tap((heroi) =>
-                  this.logMsg(`Atulizado heroi: ${heroi.nome}, com o ID: ${heroi.id}`))
-                );
+                  this.logMsg(`Atulizado: ${this.descricaoAtributos(heroi)}`)
+                ));
+  }
+
+  criarHeroi(heroi: Heroi): Observable<Heroi> {
+    return this.httpCliente.post<Heroi>(this.apiHeroisUrl, heroi)
+                .pipe(
+                  tap((heroi) => (
+                    this.logMsg(`Criado: ${this.descricaoAtributos(heroi)}`)
+                  )
+                ));
+  }
+
+  private descricaoAtributos(heroi: Heroi): string {
+    return `ID: ${heroi.id}, HEROI: ${heroi.nome}`;
   }
 
   private logMsg(mensagem: string): void {

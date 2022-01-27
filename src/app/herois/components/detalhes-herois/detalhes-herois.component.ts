@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 
 export class DetalhesHeroisComponent implements OnInit{
   heroi!: Heroi;
+  editando!: boolean;
 
   constructor(
     private heroiService: HeroiService,
@@ -29,14 +30,21 @@ export class DetalhesHeroisComponent implements OnInit{
 
   getHeroi(): void {
     /* PEGA O ID DA URL NAQUELE MOMENTO */
-    const ID = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroiService.getHeroi(ID).subscribe( heroi => {
-      this.heroi = heroi;
-    }, error => {
-      console.log("Erro ao recebe heroi.")
-    });
+    const PARAM_ID = this.route.snapshot.paramMap.get('id');
 
-    //this.heroiService.
+    if (PARAM_ID === 'new') {
+      this.editando = false;
+      /** Informando que heroi é do tipo Heroi mas nao recebe id na criação **/
+      this.heroi = {
+        nome: '',
+        forcaFisica: ''
+      } as Heroi;
+
+    } else {
+      this.editando = true;
+      const ID = Number(PARAM_ID);
+      this.heroiService.getHeroi(ID).subscribe( heroi => (this.heroi = heroi));
+    }
   }
 
   voltar(): void {
@@ -47,9 +55,10 @@ export class DetalhesHeroisComponent implements OnInit{
     return !!this.heroi.nome.trim();
   }
 
-  salvarHeroi(): void {
-    this.heroiService.atualizarHeroi(this.heroi).subscribe(
-      (heroi) => this.voltar()
-    );
+  atualizarHeroi(): void {
+    this.heroiService.atualizarHeroi(this.heroi).subscribe(() => this.voltar());
+  }
+  criarHeroi(): void {
+    this.heroiService.criarHeroi(this.heroi).subscribe((heroi) => this.voltar());
   }
 }

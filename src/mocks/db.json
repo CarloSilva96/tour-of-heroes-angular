@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nome": "Wolverine",
-      "forcaFisica": "Embora o limite exato não seja conhecido, a força de Wolverine é suficiente para levantar cerca de 362.87 Quilos."
+      "forcaFisica": "Embora o limite exato não seja conhecido, a força de Wolverine é suficiente para levantar cerca de 362.87 kg."
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
     },
     {
       "id": 5,
-      "nome": "Pantera Negra 2",
+      "nome": "Pantera Negra",
       "forcaFisica": "Sua força física está entre levantar até 8 toneladas embora os limites não sejam realmente conhecidos."
     },
     {
@@ -44,6 +44,16 @@
       "id": 11,
       "nome": "Carlos Silva",
       "forcaFisica": "Normal"
+    },
+    {
+      "forcaFisica": "",
+      "nome": "Zingara Este Ano",
+      "id": 12
+    },
+    {
+      "nome": "Zingara Este Ano",
+      "forcaFisica": "Poder da língua, consegue destruir qualquer círculo de amizade quando fala... -_-",
+      "id": 13
     }
   ]
 }
