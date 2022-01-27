@@ -7,7 +7,7 @@
     },
     {
       "id": 2,
-      "nome": "Homem Aranha",
+      "nome": "Homem Aranha 2",
       "forcaFisica": "Peter pode facilmente levantar 10 toneladas."
     },
     {
@@ -17,12 +17,12 @@
     },
     {
       "id": 4,
-      "nome": "Mulher Maravilha",
+      "nome": "Mulher Maravilha 2",
       "forcaFisica": "Pode levantar de 12.800 a 51.200 toneladas."
     },
     {
       "id": 5,
-      "nome": "Pantera Negra",
+      "nome": "Pantera Negra 2",
       "forcaFisica": "Sua força física está entre levantar até 8 toneladas embora os limites não sejam realmente conhecidos."
     },
     {

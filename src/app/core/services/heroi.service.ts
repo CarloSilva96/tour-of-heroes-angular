@@ -36,6 +36,14 @@ export class HeroiService {
                             );
   }
 
+  atualizarHeroi(heroi: Heroi): Observable<Heroi> {
+    return this.httpCliente.put<Heroi>(`${this.apiHeroisUrl}/${heroi.id}`, heroi)
+                .pipe(
+                  tap((heroi) =>
+                  this.logMsg(`Atulizado heroi: ${heroi.nome}, com o ID: ${heroi.id}`))
+                );
+  }
+
   private logMsg(mensagem: string): void {
     this.mensagemService.addMensagem(`HeroiService: ${mensagem}`);
   }

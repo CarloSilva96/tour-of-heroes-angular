@@ -42,4 +42,14 @@ export class DetalhesHeroisComponent implements OnInit{
   voltar(): void {
     this.location.back();
   }
+
+  formularioValido(): boolean {
+    return !!this.heroi.nome.trim();
+  }
+
+  salvarHeroi(): void {
+    this.heroiService.atualizarHeroi(this.heroi).subscribe(
+      (heroi) => this.voltar()
+    );
+  }
 }

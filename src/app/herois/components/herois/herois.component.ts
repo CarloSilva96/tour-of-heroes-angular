@@ -30,4 +30,5 @@ export class HeroisComponent implements OnInit {
     );
   }
 
+
 }
