@@ -7,8 +7,8 @@
     },
     {
       "id": 2,
-      "nome": "Homem Aranha 2",
-      "forcaFisica": "Peter pode facilmente levantar 10 toneladas."
+      "nome": "Homem Aranha",
+      "forcaFisica": "Peter pode facilmente levantar 100 toneladas."
     },
     {
       "id": 3,
@@ -54,6 +54,11 @@
       "nome": "Zingara Este Ano",
       "forcaFisica": "Poder da língua, consegue destruir qualquer círculo de amizade quando fala... -_-",
       "id": 13
+    },
+    {
+      "id": 14,
+      "nome": "aaa",
+      "forcaFisica": "aaa"
     }
   ]
 }

@@ -1,33 +1,51 @@
 
-  <h1> {{ editando ? "Atualizar" : "Criar" }} Heroi </h1>
+<h1> {{ editando ? "Atualizar" : "Criar" }} Heroi </h1>
+<!-- definindo form para trabalhar com o form group -->
+<!-- as validacoes de htlm nao vao ocorrer com novalidate -->
+<form [formGroup]="formHeroi" novalidate>
   <mat-card>
     <mat-card-content fxLayout="column">
 
       <mat-form-field *ngIf="editando" appearance="fill">
         <mat-label>ID</mat-label>
-        <input matInput disabled [value]="heroi.id">
-      </mat-form-field>
-
-      <mat-form-field *ngIf="heroi.forcaFisica !== undefined" appearance="fill">
-        <mat-label>Força Física</mat-label>
-        <textarea matInput
-          [(ngModel)]="heroi.forcaFisica"
-          class="resize-none"
-        >
-        </textarea>
+        <input matInput formControlName="id">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Nome do Heroi</mat-label>
-        <input matInput [(ngModel)]="heroi.nome" id="nome" type="text" placeholder="Nome">
+        <input matInput formControlName="nome" id="nome" type="text" placeholder="Nome">
+        <!-- Validacao de required usada no formGroup -->
+        <mat-error *ngIf="formHeroi.controls['nome'].hasError('required')">
+          Obrigado preencher o campo de nome.
+        </mat-error>
+        <mat-error *ngIf="formHeroi.controls['nome'].hasError('minlength')">
+          Nome deve ter no mínimo 3 caracteres.
+        </mat-error>
       </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Força Física</mat-label>
+        <textarea matInput
+          class="resize-none"
+          formControlName="forcaFisica"
+        >
+        </textarea>
+        <mat-error *ngIf="formHeroi.controls['forcaFisica'].hasError('required')">
+          Obrigado preencher o campo de forca fisica.
+        </mat-error>
+        <mat-error *ngIf="formHeroi.controls['forcaFisica'].hasError('minlength')">
+          Força Física deve ter no mínimo 3 caracteres.
+        </mat-error>
+      </mat-form-field>
+
 
       <mat-card-actions >
         <button mat-raised-button (click)="voltar()">Voltar</button>
-        <button mat-raised-button color="primary" *ngIf="!editando" [disabled]="!formularioValido()" (click)="criarHeroi()">Salvar</button>
-        <button mat-raised-button color="primary" *ngIf="editando" [disabled]="!formularioValido()" (click)="atualizarHeroi()">Atualizar</button>
+        <button mat-raised-button color="primary" *ngIf="!editando" (click)="criarHeroi()">Salvar</button>
+        <button mat-raised-button color="primary" *ngIf="editando" (click)="atualizarHeroi()">Atualizar</button>
       </mat-card-actions>
     </mat-card-content>
-</mat-card>
+  </mat-card>
+</form>
 
 

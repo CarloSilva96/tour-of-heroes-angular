@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { DetalhesHeroisComponent } from './components/detalhes-herois/detalhes-herois.component';
 import { HeroisComponent } from './components/herois/herois.component';
 import { MaterialModule } from '../material/material.module';
-import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeroisRoutingModule } from './herois-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,9 +16,9 @@ import { HeroisRoutingModule } from './herois-routing.module';
   imports: [
     CommonModule,
     MaterialModule,
-    FormsModule,
     FlexLayoutModule,
     HeroisRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class HeroisModule { }
