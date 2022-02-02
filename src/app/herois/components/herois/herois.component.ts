@@ -21,12 +21,7 @@ export class HeroisComponent implements OnInit {
 
   setHerois(): void {
     this.heroiService.getHerois().subscribe(
-      herois => {
-        this.herois = herois;
-      },
-      error => {
-        console.log("Erro ao receber dados");
-      }
+      herois =>  this.herois = herois
     );
   }
 

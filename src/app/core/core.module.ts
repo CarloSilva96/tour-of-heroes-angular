@@ -10,6 +10,7 @@ import { PaginaNaoEncontradaComponent } from './components/pagina-nao-encontrada
 import { LoadingPaginaComponent } from './components/loading-pagina/loading-pagina.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
+import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 
 const COMPONENTS = [
   MensagensComponent,
@@ -38,6 +39,11 @@ const MODULES = [
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
       multi: true // Pode ter mais de um interceptor
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
     }
   ]
 })
