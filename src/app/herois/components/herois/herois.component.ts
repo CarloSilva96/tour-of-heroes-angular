@@ -39,6 +39,10 @@ export class HeroisComponent implements OnInit {
 
     /** CHAMANDO COMPONENT DO DIALOG DE MSG AO EXCLUIR E PASSANDO OS DADOS PARA EXIBIR NO COMPONENT **/
     const DIALOG_REFERENCIA = this.matDialog.open(ConfimarDialogComponent, {
+      position: {
+        top: '50px'
+        /** left, right, bottom **/
+      },
       data: DIALOG_DADOS,
       width: '400px'
     });

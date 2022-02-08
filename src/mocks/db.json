@@ -34,11 +34,6 @@
       "id": 7,
       "nome": "Capitã Marvel",
       "forcaFisica": "Extremamente forte. Pode absover energia para aumentar mais ainda a sua força."
-    },
-    {
-      "id": 8,
-      "nome": "Hulk",
-      "forcaFisica": "Pode levantar também é 100 toneladas."
     }
   ]
 }
