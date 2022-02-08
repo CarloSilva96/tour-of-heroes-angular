@@ -11,14 +11,12 @@ import { LoadingPaginaComponent } from './components/loading-pagina/loading-pagi
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
-import { ConfimarDialogComponent } from './components/confimar-dialog/confimar-dialog.component';
 
 const COMPONENTS = [
-  ConfimarDialogComponent,
   MensagensComponent,
   PaginaNaoEncontradaComponent,
   ToolbarComponent,
-  LoadingPaginaComponent,
+  LoadingPaginaComponent
 ];
 
 const MODULES = [
