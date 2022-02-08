@@ -22,35 +22,28 @@ export class HeroiService {
   getHerois(): Observable<Heroi[]> {
     // this.mensagemService.addMensagem("Heróis recebido!")
     return this.httpCliente.get<Heroi[]>(this.apiHeroisUrl)
-                            .pipe(
-                              tap((herois) => this.logMsg(`Foram recebidos ${herois.length} heroi(s).`))
-                            );
+                           .pipe(tap((herois) => this.logMsg(`Foram recebidos ${herois.length} heroi(s).`)));
   }
 
   getHeroi(id: number): Observable<Heroi> {
-    //this.mensagemService.addMensagem(`Retornado heroi com id = ${id}`)
-    //const HEROI = this.herois //.find(heroi => heroi.id === id)!;
-    return this.httpCliente.get<Heroi>(`${this.apiHeroisUrl}/${id}`)
-                            .pipe(
-                              tap((heroi) => this.logMsg(`Selecionado: ${this.descricaoAtributos(heroi)}`)
-                            ));
+    return this.httpCliente.get<Heroi>(this.getUrl(id))
+                           .pipe(tap((heroi) => this.logMsg(`Selecionado: ${this.descricaoAtributos(heroi)}`)));
   }
 
   atualizarHeroi(heroi: Heroi): Observable<Heroi> {
-    return this.httpCliente.put<Heroi>(`${this.apiHeroisUrl}/${heroi.id}`, heroi)
-                .pipe(
-                  tap((heroi) =>
-                  this.logMsg(`Atulizado: ${this.descricaoAtributos(heroi)}`)
-                ));
+    return this.httpCliente.put<Heroi>(this.getUrl(heroi.id), heroi)
+                           .pipe(tap((heroi) => this.logMsg(`Atulizado: ${this.descricaoAtributos(heroi)}`)));
   }
 
   criarHeroi(heroi: Heroi): Observable<Heroi> {
     return this.httpCliente.post<Heroi>(this.apiHeroisUrl, heroi)
-                .pipe(
-                  tap((heroi) => (
-                    this.logMsg(`Criado: ${this.descricaoAtributos(heroi)}`)
-                  )
-                ));
+                           .pipe(tap((heroi) => (this.logMsg(`Criado: ${this.descricaoAtributos(heroi)}`))));
+  }
+
+  excluirHeroi(heroi: Heroi): Observable<any> {
+    return this.httpCliente.delete<any>(this.getUrl(heroi.id))
+                           .pipe(tap(() =>  this.logMsg(`Excluído: ${this.descricaoAtributos(heroi)}`)));
+
   }
 
   private descricaoAtributos(heroi: Heroi): string {
@@ -59,5 +52,9 @@ export class HeroiService {
 
   private logMsg(mensagem: string): void {
     this.mensagemService.addMensagem(`HeroiService: ${mensagem}`);
+  }
+
+  private getUrl(id: Number): string {
+    return `${this.apiHeroisUrl}/${id}`
   }
 }

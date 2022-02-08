@@ -14,51 +14,6 @@
       "id": 3,
       "nome": "Batman",
       "forcaFisica": "Batman pode levantar de 400 a 725 Quilos."
-    },
-    {
-      "id": 4,
-      "nome": "Mulher Maravilha 2",
-      "forcaFisica": "Pode levantar de 12.800 a 51.200 toneladas."
-    },
-    {
-      "id": 5,
-      "nome": "Pantera Negra",
-      "forcaFisica": "Sua força física está entre levantar até 8 toneladas embora os limites não sejam realmente conhecidos."
-    },
-    {
-      "id": 6,
-      "nome": "Homem de Ferro",
-      "forcaFisica": "Quando totalmente carregada, Tony Stark pode levantar até 100 toneladas em sua armadura do Homem de Ferro."
-    },
-    {
-      "id": 7,
-      "nome": "Capitã Marvel",
-      "forcaFisica": "Extremamente forte. Pode absover energia para aumentar mais ainda a sua força."
-    },
-    {
-      "id": 8,
-      "nome": "Hulk",
-      "forcaFisica": "Pode levantar também é 100 toneladas."
-    },
-    {
-      "id": 11,
-      "nome": "Carlos Silva",
-      "forcaFisica": "Normal"
-    },
-    {
-      "forcaFisica": "",
-      "nome": "Zingara Este Ano",
-      "id": 12
-    },
-    {
-      "nome": "Zingara Este Ano",
-      "forcaFisica": "Poder da língua, consegue destruir qualquer círculo de amizade quando fala... -_-",
-      "id": 13
-    },
-    {
-      "id": 14,
-      "nome": "aaa",
-      "forcaFisica": "aaa"
     }
   ]
 }

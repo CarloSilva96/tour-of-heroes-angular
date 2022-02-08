@@ -22,6 +22,20 @@
       <mat-cell mat-cell *matCellDef="let heroi"> {{ heroi.nome }} </mat-cell>
     </ng-container>
 
+    <!-- Excluir -->
+    <ng-container matColumnDef="excluir">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let heroi">
+        <button
+          mat-icon-button
+          matTooltip="Deletar Heroi"
+          (click)="excluirHeroi(heroi); $event.stopPropagation()"
+        >
+          <mat-icon class="cor-butao">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="atributosHerois"></mat-header-row>
     <mat-row *matRowDef="let heroi; columns: atributosHerois" [routerLink]="['/herois', heroi.id]"></mat-row>
   </mat-table>

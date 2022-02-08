@@ -9,7 +9,7 @@ import { HeroiService } from '../../../core/services/heroi.service';
 })
 export class HeroisComponent implements OnInit {
   herois: Heroi[] = [];
-  atributosHerois: string[] = ['id', 'nome'];
+  atributosHerois: string[] = ['id', 'nome', 'excluir'];
 
   constructor(
     private heroiService: HeroiService
@@ -23,6 +23,16 @@ export class HeroisComponent implements OnInit {
     this.heroiService.getHerois().subscribe(
       herois =>  this.herois = herois
     );
+  }
+
+  excluirHeroi(heroi: Heroi): void {
+    this.heroiService.excluirHeroi(heroi).subscribe(() => {
+      /** Atualizando lista usando filter
+        this.herois = this.herois.filter((h) => h != heroi)
+      **/
+      /** Atualizando lista usando o setHerois **/
+      this.setHerois();
+    });
   }
 
 
