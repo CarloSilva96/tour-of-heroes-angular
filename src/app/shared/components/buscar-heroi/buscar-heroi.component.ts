@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Observable, Subject, switchMap} from "rxjs";
+import {debounceTime, distinctUntilChanged, Observable, Subject, switchMap} from "rxjs";
 import {Heroi} from "../../../core/models/heroi.model";
 import {HeroiService} from "../../../core/services/heroi.service";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
@@ -27,6 +27,12 @@ export class BuscarHeroiComponent implements OnInit {
 
   ngOnInit(): void {
     this.herois$ = this.buscarTermos.pipe(
+      /** tempo de espera para receber os valores de busca **/
+      debounceTime(600),
+
+      /** apenas executa se o valor for diferente do que já foi digitado **/
+      distinctUntilChanged(),
+
       /** Pegando o valor atualizado de termo e passando para busca de heroi **/
       /** o switchMap usa intervalos para trabalhar com isso **/
       switchMap(termo => this.heroiService.buscarHeroi(termo))
