@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Heroi } from '../core/models/heroi.model';
 import { HeroiService } from '../core/services/heroi.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,8 @@ export class DashboardComponent implements OnInit {
   herois: Heroi[] = [];
 
   constructor(
-    private heroiService: HeroiService
+    private heroiService: HeroiService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -24,4 +26,8 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  onSelect(heroi: Heroi): void {
+    /** Abrindo show do heroi selecionado **/
+    this.router.navigate([`/herois/${heroi.id}`])
+  }
 }

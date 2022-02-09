@@ -22,9 +22,10 @@
   </button>
 
   <!-- Adicionado module de autocomplete do material -->
+  <!-- Pegando valor selecionado do autoComplete e passando para o onSelected -->
   <mat-autocomplete
     #auto="matAutocomplete"
-    (optionSelected)="buscarInput.value=''"
+    (optionSelected)="onSelect($event); buscarInput.value=''"
   >
     <!-- Usando metodo com observable e async direto no template para retornar os herois -->
     <mat-option *ngFor="let heroi of herois$ | async" [value]="heroi">

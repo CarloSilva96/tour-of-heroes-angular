@@ -8,7 +8,7 @@
   >
     <mat-icon>add</mat-icon>
   </button>
-
+  <app-buscar-heroi [label]="'Heroi para excluir'" (heroiSelecionado)="onSelect($event)" ></app-buscar-heroi>
   <mat-table [dataSource]="herois" class="mat-elevation-z8">
     <!-- ID -->
     <ng-container matColumnDef="id">

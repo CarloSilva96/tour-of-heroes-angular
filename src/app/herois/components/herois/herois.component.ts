@@ -5,6 +5,7 @@ import {ConfirmarDialog} from "../../../core/models/confirmar-dialog.model";
 import {timeout} from "rxjs";
 import {MatDialog} from "@angular/material/dialog";
 import {ConfimarDialogComponent} from "../../../core/components/confimar-dialog/confimar-dialog.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-herois',
@@ -16,6 +17,7 @@ export class HeroisComponent implements OnInit {
   atributosHerois: string[] = ['id', 'nome', 'excluir'];
 
   constructor(
+    private router: Router,
     private matDialog: MatDialog, /** adicionando matDialog para usar caixa de dialogo de confirmacao ao exlcuir **/
     private heroiService: HeroiService
   ) { }
@@ -58,5 +60,8 @@ export class HeroisComponent implements OnInit {
       });
   }
 
+  onSelect(heroi: Heroi): void {
+    this.excluirHeroi(heroi);
+  }
 
 }
