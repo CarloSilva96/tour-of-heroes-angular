@@ -1,13 +1,34 @@
 <mat-form-field appearance="fill" class="input-width">
   <mat-label>{{ label }}</mat-label>
   <!-- Usando varivel de template para referenciar em outra parte do html do angular -->
-  <input matInput placeholder="Nome do Heroi" type="text" #buscarInput/>
+  <!-- Fazendo ligação do input com o autoComplete -->
+  <input
+    [matAutocomplete]="auto"
+    matInput
+    placeholder="Nome do Heroi"
+    type="text"
+    #buscarInput
+    (input)="buscar(buscarInput.value)"
+  />
   <!-- Botão aparece para limpar o conteúdo caso o input seja preenchido-->
+  <!-- limpando valor do input ao clicar no x -->
   <button mat-icon-button
-          matSuffix *ngIf="buscarInput.value"
-          (click)="buscarInput.value = ''"> <!-- limpando valor do input ao clicar no x -->
+    matSuffix *ngIf="buscarInput.value"
+    (click)="buscarInput.value = ''"
+  >
     <mat-icon>
       clear
     </mat-icon>
   </button>
+
+  <!-- Adicionado module de autocomplete do material -->
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    (optionSelected)="buscarInput.value=''"
+  >
+    <!-- Usando metodo com observable e async direto no template para retornar os herois -->
+    <mat-option *ngFor="let heroi of herois$ | async" [value]="heroi">
+      {{ heroi.nome }}
+    </mat-option>
+  </mat-autocomplete>
 </mat-form-field>
