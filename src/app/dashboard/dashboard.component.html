@@ -1,12 +1,15 @@
 <h1>DashBoard</h1>
-<div
-  fxLayout="row"
-  fxLayoutGap="12px"
-  fxLayoutAlign="space-between"
-  fxLayout.xs="column"
->
-  <mat-card class="pointer" *ngFor="let heroi of herois" [routerLink]="['/herois', heroi.id]">
-    <mat-card-title>{{ heroi.nome }}</mat-card-title>
-  </mat-card>
-</div>
 
+<div fxLayout="column" fxLayoutGap="24px">
+  <app-buscar-heroi></app-buscar-heroi>
+  <div
+    fxLayout="row"
+    fxLayoutGap="12px"
+    fxLayoutAlign="space-between"
+    fxLayout.xs="column"
+  >
+    <mat-card class="pointer" *ngFor="let heroi of herois" [routerLink]="['/herois', heroi.id]">
+      <mat-card-title>{{ heroi.nome }}</mat-card-title>
+    </mat-card>
+  </div>
+</div>

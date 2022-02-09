@@ -1,0 +1,13 @@
+<mat-form-field appearance="fill" class="input-width">
+  <mat-label>{{ label }}</mat-label>
+  <!-- Usando varivel de template para referenciar em outra parte do html do angular -->
+  <input matInput placeholder="Nome do Heroi" type="text" #buscarInput/>
+  <!-- Botão aparece para limpar o conteúdo caso o input seja preenchido-->
+  <button mat-icon-button
+          matSuffix *ngIf="buscarInput.value"
+          (click)="buscarInput.value = ''"> <!-- limpando valor do input ao clicar no x -->
+    <mat-icon>
+      clear
+    </mat-icon>
+  </button>
+</mat-form-field>

@@ -46,6 +46,19 @@ export class HeroiService {
 
   }
 
+  /** Query string para buscar heroi por nome **/
+  /** /herois?nome=value **/
+  buscarHeroi(termo: string): Observable<Heroi[]> {
+    if (!termo.trim()) {
+      return of([]);
+    }
+    /** Fazendo busca de herois por meio do termo passado **/
+    return this.httpCliente.get<Heroi[]>(`${this.apiHeroisUrl}?nome=${termo}`)
+                           .pipe(tap((herois) => {
+                             herois.length ? this.logMsg(`Encontrado: ${herois.length}`) : this.logMsg(`Não encontrado nenhum heroi ${termo}`)
+                           }));
+  }
+
   private descricaoAtributos(heroi: Heroi): string {
     return `ID: ${heroi.id}, HEROI: ${heroi.nome}`;
   }
